@@ -15,7 +15,7 @@
             justify-content: center;
             align-items: flex-start;
             flex-grow: 1;
-            height: 100vh; 
+            height: 100vh;
             margin-top: 50px;
         }
     </style>
@@ -23,9 +23,24 @@
 <body>
     <h1>Вы успешно пососали!</h1>
     <p>Можете покинуть страницу.</p>
-    <audio src="file/dabbackwood-sejdzhuro-akashi-2-mp3.mp3" controls autoplay></audio>
+    <audio id="audio" src="file/dabbackwood-sejdzhuro-akashi-2-mp3.mp3" controls autoplay></audio>
     <div class="container">
-    <img src="file/b556dbccd65b2cb08f632b2592289816.gif" alt="" style="display:block; margin-top:20px;">
-</div>
+        <img src="file/b556dbccd65b2cb08f632b2592289816.gif" alt="" style="display:block; margin-top:20px;">
+    </div>
+    <script>
+        const audio = document.getElementById('audio');
+
+        document.addEventListener('click', () => {
+            audio.play().catch(error => {
+                console.log('Ошибка воспроизведения:', error);
+            });
+        });
+
+        window.onload = () => {
+            audio.play().catch(error => {
+                console.log('Ошибка воспроизведения:', error);
+            });
+        };
+    </script>
 </body>
 </html>
